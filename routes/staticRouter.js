@@ -5,11 +5,9 @@ const URL=require('../models/url')
 
 router.get('/',async (req,res)=>{
     if(!req.user) return res.render("login")
-    try {
+    
         const allUrls=await URL.find({createdBy:req.user._id});
-    } catch (error) {
-        console.log(error)
-    }
+ 
  
     return res.render('home',{allUrls});
 })

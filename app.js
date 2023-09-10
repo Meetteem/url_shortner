@@ -8,7 +8,7 @@ const dotenv = require("dotenv")
 dotenv.config();
 
 const PORT=process.env.PORT || 8000;
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.d9dv9cl.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://Admin:admin@cluster0.d9dv9cl.mongodb.net/?retryWrites=true&w=majority`;
 
 const URL=require('./models/url');
 const staticRoute=require('./routes/staticRouter')
