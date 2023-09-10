@@ -13,14 +13,12 @@ async function handleUserSignUp(req,res){
 }
 async function handleUserLogIn(req,res){
     const {email,password}=req.body;
-    try {
+    
         const user=await USER.findOne({
             email:email,
             password:password
-        });
-    } catch (error) {
-        console.log(error);
-    }
+        })
+    
     
     if(!user){
         return res.json({"err":"Invalid email or password"});
