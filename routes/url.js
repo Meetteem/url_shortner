@@ -6,7 +6,6 @@ router.post('/',handleGenerateNewShortURL);
 router.get('/analytics/:shortId',handleGetAnalytics);
 router.get('/:shortId',async (req,res)=>{
 	const shortId=req.params.shortId
-	try {
 		const entry = await URL.findOneAndUpdate({shortId},{
 			$push :{
 			 visitHistory:{
@@ -14,9 +13,7 @@ router.get('/:shortId',async (req,res)=>{
 			 }
 			}
 		})
-	} catch (error) {
-		
-	}
+	
 	if(!entry.redirectUrl){
 		console.log("Null");
 	}
